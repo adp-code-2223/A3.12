@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,7 +25,7 @@ public class Empresas implements Serializable {
 	private String nombre;
 	private String direccion;
 	private String telefono;
-	@OneToMany(mappedBy = "empresa")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
 	private Set<Empleados> empleados = new HashSet<>();
 
 	

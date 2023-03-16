@@ -1,6 +1,7 @@
 package main;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import modelo.Empresas;
 import modelo.Fijos;
@@ -50,6 +51,21 @@ public class Main {
 		
 		empleadoServicio.create(fijo_1);
 		empleadoServicio.create(temp_1);
+		
+		
+		try {
+			String empno= "12341234A";
+			if(empleadoServicio.delete(empno)) {
+				System.out.println("Se ha borrado correctamente el empleado con id: " + empno);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Ha ocurrido una exception en delete "+ e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		
+		List<Empresas> empresas = empresaServicio.getAllEmpresasYEmpleados();
 		
 	}
 
