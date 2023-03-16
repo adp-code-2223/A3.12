@@ -70,4 +70,13 @@ public abstract class Empleados implements Serializable {
 		this.porcentaRetencion = porcentaRetencion;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Empleados [dni=" + dni + ", nombre=" + nombre + ", telefono=" + telefono + ", porcentaRetencion="
+				+ porcentaRetencion + "]";
+	}
+	
+	
+
 }

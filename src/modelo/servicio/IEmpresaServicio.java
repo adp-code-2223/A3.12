@@ -8,4 +8,6 @@ public interface IEmpresaServicio {
 	public Empresas create(Empresas empresa);
 	
 	public List<Empresas> getAllEmpresasYEmpleados();
+	
+	public boolean delete(String cif) throws Exception;
 }

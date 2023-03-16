@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.BatchSize;
 
 @Entity
 @Table(name = "empresa")
@@ -25,7 +28,8 @@ public class Empresas implements Serializable {
 	private String nombre;
 	private String direccion;
 	private String telefono;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "empresa", cascade = CascadeType.REMOVE)
+	@BatchSize(size = 2)
 	private Set<Empleados> empleados = new HashSet<>();
 
 	
@@ -69,4 +73,12 @@ public class Empresas implements Serializable {
 		this.empleados = empleados;
 	}
 
+	@Override
+	public String toString() {
+		return "Empresas [cif=" + cif + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
+				+ "]";
+	}
+
+	
+	
 }
