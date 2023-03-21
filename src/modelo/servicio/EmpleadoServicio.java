@@ -31,7 +31,7 @@ public class EmpleadoServicio implements IEmpleadoServicio {
 	}
 
 	@Override
-	public boolean delete(String dni) throws Exception {
+	public boolean delete(String dni) throws InstanceNotFoundException {
 		boolean exito = false;
 
 		SessionFactory sf = SessionFactoryUtil.getSessionFactory();

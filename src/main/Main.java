@@ -48,7 +48,7 @@ public class Main {
 		
 		
 		Fijos fijo_1 = new Fijos();
-		fijo_1.setDni("12341234A");
+		//fijo_1.setDni("12341234A");
 		fijo_1.setEmpresa(empresa);
 		fijo_1.setNombre("Yo soy fijo");
 		fijo_1.setPorcentaRetencion(0.2f);
@@ -57,7 +57,7 @@ public class Main {
 		fijo_1.setTrienios(0);
 		
 		Temporales temp_1 = new Temporales();
-		temp_1.setDni("11112222B");
+		//temp_1.setDni("11112222B");
 		temp_1.setEmpresa(empresa);
 		temp_1.setFechaFin(LocalDate.of(2023, 1, 10));
 		temp_1.setFechaInicio(LocalDate.of(2023, 1, 1));
@@ -69,7 +69,7 @@ public class Main {
 		
 		
 		Fijos fijo_2 = new Fijos();
-		fijo_2.setDni("12341234B");
+		//fijo_2.setDni("12341234B");
 		fijo_2.setEmpresa(empresa2);
 		fijo_2.setNombre("Yo soy fijo 2");
 		fijo_2.setPorcentaRetencion(0.2f);
@@ -78,7 +78,7 @@ public class Main {
 		fijo_2.setTrienios(0);
 		
 		Fijos fijo_3 = new Fijos();
-		fijo_3.setDni("12341234C");
+		//fijo_3.setDni("12341234C");
 		fijo_3.setEmpresa(empresa3);
 		fijo_3.setNombre("Yo soy fijo 3");
 		fijo_3.setPorcentaRetencion(0.2f);

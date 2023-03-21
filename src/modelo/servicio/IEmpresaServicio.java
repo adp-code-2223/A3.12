@@ -2,6 +2,7 @@ package modelo.servicio;
 
 import java.util.List;
 
+import exceptions.InstanceNotFoundException;
 import modelo.Empresas;
 
 public interface IEmpresaServicio {
@@ -9,5 +10,5 @@ public interface IEmpresaServicio {
 	
 	public List<Empresas> getAllEmpresasYEmpleados();
 	
-	public boolean delete(String cif) throws Exception;
+	public boolean delete(String cif) throws InstanceNotFoundException;
 }

@@ -28,7 +28,7 @@ public class Empresas implements Serializable {
 	private String nombre;
 	private String direccion;
 	private String telefono;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "empresa", cascade = CascadeType.REMOVE)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa", cascade = CascadeType.REMOVE)
 	@BatchSize(size = 2)
 	private Set<Empleados> empleados = new HashSet<>();
 

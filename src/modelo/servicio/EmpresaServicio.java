@@ -50,7 +50,14 @@ public class EmpresaServicio implements IEmpresaServicio {
 			
 			
 			 empresas =session.createQuery("select e from Empresas e order by e.nombre").list();
-					
+				
+			 for (Empresas cia : empresas) {
+				for(Empleados empleado: cia.getEmpleados()) {
+					//Forzar el select del empleado
+					System.out.println("Forzando el select de empleado DNI: " +empleado.getDni());
+					empleado.getNombre();
+				}
+			}
 			
 			tx.commit();
 		}
@@ -67,7 +74,7 @@ public class EmpresaServicio implements IEmpresaServicio {
 	}
 
 	@Override
-	public boolean delete(String cif) throws Exception{
+	public boolean delete(String cif) throws InstanceNotFoundException{
 		boolean exito = false;
 
 		SessionFactory sf = SessionFactoryUtil.getSessionFactory();

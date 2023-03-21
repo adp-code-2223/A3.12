@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -19,7 +21,8 @@ public abstract class Empleados implements Serializable {
 	 */
 	private static final long serialVersionUID = 859936793659262713L;
 	@Id
-	private String dni;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int dni;
 	private String nombre;
 	private String telefono;
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -30,11 +33,11 @@ public abstract class Empleados implements Serializable {
 	public abstract float calculoNomina();
 
 	
-	public String getDni() {
+	public int getDni() {
 		return dni;
 	}
 
-	public void setDni(String dni) {
+	public void setDni(int dni) {
 		this.dni = dni;
 	}
 
